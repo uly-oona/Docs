@@ -1,0 +1,10 @@
+{
+  "title": "DeliveryMethodFilter",
+  "description": "Фильтр доставки, выбранный на экране выбора магазина с фильтрами",
+  "type": "string",
+  "enum": [
+    "pickup",
+    "all",
+    "express"
+  ]
+}

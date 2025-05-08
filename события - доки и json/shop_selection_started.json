@@ -1,0 +1,55 @@
+{
+  "description": "Каждый раз, когда пользователь открывает модалку в выбором магазина ",
+  "properties": {
+    "available_stores": {
+      "description": "Массив с характеристиками доступных магазинов",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AvailableStore"
+      }
+    },
+    "available_tabs": {
+      "description": "Массив доступных вкладок",
+      "type": "array",
+      "items": {
+        "description": "Slug категории ритейлеров",
+        "type": "string"
+      }
+    },
+    "from_deeplink": {
+      "description": "Если перешли с какого-то диплинка, в параметре будет значение диплинка. Например, pickup для самовывоза",
+      "type": "string"
+    },
+    "is_merge_available": {
+      "description": "флаг показывает, может ли пользователь перейти в режим дозаказа",
+      "type": "boolean"
+    },
+    "source": {
+      "description": "Откуда именно была вызвана модалка выбора магазина",
+      "$ref": "#/definitions/ShopSelectionSource"
+    },
+    "with_pickup_store": {
+      "description": "есть выбранный магазин самовывоза, но клиент вернулся назад к выбору по нажатию на его адрес на главной - True",
+      "type": "boolean"
+    },
+    "delivery_filter": {
+      "description": "Какой фильтр доставки стоит на момент клика по 2му уровню фильтров",
+      "$ref": "#/definitions/DeliveryMethodFilter"
+    },
+    "available_delivery_filters": {
+      "description": "Массив доступных фильтров 1го уровня",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/DeliveryMethodFilter"
+      }
+    }
+  },
+  "required": [
+    "available_stores",
+    "source",
+    "available_tabs",
+    "with_pickup_store"
+  ],
+  "title": "Shop Selection Started",
+  "type": "object"
+}

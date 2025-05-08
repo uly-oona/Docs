@@ -1,0 +1,44 @@
+{
+  "title": "AvailableStore",
+  "type": "object",
+  "description": "Сущность магазина",
+  "properties": {
+    "id": {
+      "description": "Идентификатор магазина",
+      "type": "number"
+    },
+    "tab": {
+      "description": "Категория магазина",
+      "type": "string"
+    },
+    "position": {
+      "description": "Порядковый номер в списке магазинов",
+      "type": "number"
+    },
+    "pickup_available": {
+      "description": "Доступен ли самовывоз из магазина",
+      "type": "boolean"
+    },
+    "distance": {
+      "description": "Расстояние от магазина до адреса доставки пользователя",
+      "type": "number"
+    },
+    "delivery_window_estimate_type": {
+      "description": "Тип слота доставки",
+      "type": "string"
+    },
+    "closest_delivery_time_displayed": {
+      "description": "Кол-во минут до ближайшей доставки",
+      "type": "number"
+    },
+    "closest_delivery_time_right_bound": {
+      "description": "Кол-во минут до правой границы ближайшей доставки",
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "position",
+    "pickup_available"
+  ]
+}

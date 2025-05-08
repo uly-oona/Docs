@@ -1,0 +1,84 @@
+{
+  "description": "Каждый раз, когда пользователь выбирает магазин",
+  "properties": {
+    "available_stores": {
+      "description": "Массив доступных магазинов. На новом экране с фильтрами - магазины на вкладках все, быстро, на экране выбранного фильтра",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AvailableStore"
+      }
+    },
+    "available_tabs": {
+      "description": "Массив доступных вкладок. Отправляется пустой массив при условии отсутствия третьего уровня фильтров в новом окне выбранной категории",
+      "type": "array",
+      "items": {
+        "description": "Slug категории ритейлеров",
+        "type": "string"
+      }
+    },
+    "closest_delivery_time_displayed": {
+      "description": "Через сколько времени в минутах мы общаем доставку пользователю",
+      "type": "number"
+    },
+    "closest_delivery_time_right_bound": {
+      "description": "Кол-во минут до правой границы ближайшей доставки",
+      "type": "number"
+    },
+    "delivery_method": {
+      "description": "Метод доставки выбранного магазина, которым клиент получит заказ",
+      "$ref": "#/definitions/DeliveryMethod"
+    },
+    "delivery_filter": {
+      "description": "Метод доставки, выбранный в фильтрах 1го уровня. Для нового экрана с фильтрами",
+      "$ref": "#/definitions/DeliveryMethodFilter"
+    },
+    "delivery_window_estimate_type": {
+      "description": "параметр показывает, по какому принципу рассчитано окно доставки",
+      "type": "string"
+    },
+    "position": {
+      "description": "Позиция выбранного магазина на вкладке (нумерация с 1)",
+      "type": "number"
+    },
+    "selected_store": {
+      "description": "id магазина, который был выбран пользователем",
+      "type": "number"
+    },
+    "source": {
+      "description": "Откуда попали на экран выбора магазина доставки. Исключает source_pickup",
+      "$ref": "#/definitions/ShopSelectionSource"
+    },
+    "source_pickup": {
+      "description": "Откуда попали на модалку выбора магазинов самовывоза. Исключает source",
+      "$ref": "#/definitions/PickupShopSelectionSource"
+    },
+    "tab": {
+      "description": "С какой вкладки был выбран магазин (фильтры 2го уровня)",
+      "type": "string"
+    },
+    "from_deeplink": {
+      "description": "Если перешли с какого-то диплинка, в параметре будет значение диплинка. Например, pickup для самовывоза",
+      "type": "string"
+    },
+    "is_selected_from_your_shop_tab": {
+      "description": "true если магазин выбран с плашки 'Ваш магазин', false в ином случае",
+      "type": "boolean"
+    },
+    "available_delivery_filters": {
+      "description": "Массив доступных фильтров 1го уровня",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/DeliveryMethodFilter"
+      }
+    }
+  },
+  "required": [
+    "available_stores",
+    "delivery_method",
+    "selected_store",
+    "closest_delivery_time_displayed",
+    "is_selected_from_your_shop_tab"
+  ],
+  "title": "Shop Selected",
+  "type": "object"
+}

@@ -1,0 +1,16 @@
+{
+  "title": "ShopSelectionSource",
+  "description": "Откуда именно был показан экран выбора магазина доставки",
+  "type": "string",
+  "enum": [
+    "address_selection",
+    "app_launch",
+    "main_page",
+    "pickup_button",
+    "address_undelivery",
+    "additional_page",
+    "checkout",
+    "store_address_clicked"
+  ],
+  "$comment": "checkout - после перехода через переключалку метода доставки на чекауте; address_undelivery - в Shop Selected, когда доступен только самовывоз"
+}

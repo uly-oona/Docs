@@ -1,0 +1,58 @@
+{
+  "description": "Каждый раз, когда пользователь успешно оформляет заказ (любой)",
+  "properties": {
+    "cart_type": {
+      "description": "Тип корзины",
+      "type": "string"
+    },
+    "coupon": {
+      "description": "Введенный пользователем купон (его текст). Если промокод не использовался-  на iOS null, на Android параметра не будет (из-за особенностей SDK, который не отправляет null, а убирает параметр)",
+      "type": "string"
+    },
+    "order_number": {
+      "description": "Строковый ID заказа",
+      "type": "string"
+    },
+    "shipment_number": {
+      "description": "К какому шипменту относится заказ",
+      "type": "string"
+    },
+    "order_seq": {
+      "description": "Порядковый номер заказа",
+      "type": "number"
+    },
+    "payment_method": {
+      "description": "метод оплаты",
+      "type": "string"
+    },
+    "total": {
+      "description": "Сумма заказа, которую видит пользователь",
+      "type": "number"
+    },
+    "type_delivery": {
+      "description": "Обозначает тип доставки для заказа",
+      "type": "string",
+      "enum": [
+        "planned",
+        "asap",
+        "pickup"
+      ]
+    },
+    "is_contactless_selected": {
+      "description": "выбрана ли бесконтактная доставка",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "order_number",
+    "shipment_number",
+    "order_seq",
+    "total",
+    "payment_method",
+    "cart_type",
+    "type_delivery",
+    "is_contactless_selected"
+  ],
+  "title": "Order Completed",
+  "type": "object"
+}

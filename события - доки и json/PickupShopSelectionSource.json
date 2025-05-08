@@ -1,0 +1,24 @@
+{
+  "title": "PickupShopSelectionSource",
+  "description": "Откуда была вызвана модалка с выбором магазина самовывоза",
+  "type": "string",
+  "enum": [
+    "app_launch",
+    "retailers_pickup_tab",
+    "address_undelivery",
+    "store_address_clicked",
+    "repeat_order",
+    "search",
+    "favourites_list",
+    "category",
+    "product",
+    "pickup_button",
+    "pickup_deeplink",
+    "twist_on_tab_all",
+    "cart",
+    "checkout",
+    "previous_order_main_page",
+    "recommendations"
+  ],
+  "$comment": "cart - переключалка метода доставки в корзине, будет доступна,только когда реализуем переключение в корзине на разные магазины; checkout - переключалка метода доставки на новом чекауте (пока он не реализован для всех)"
+}
